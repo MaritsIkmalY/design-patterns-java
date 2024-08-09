@@ -1,10 +1,8 @@
-package mediator;
-
 import dataprovider.DataProviderContext;
 import api.ApiDataProvider;
+import mediator.ConcreteMediator;
 import sqlite.SqliteDataProvider;
 public class Main{
-    public static final String ROUTE = "Onboarding";
 
     public static void main(String[] args) {
         Main mainInstance = new Main();
@@ -16,6 +14,6 @@ public class Main{
         sqliteDataProviderContext.connect();
 
         ConcreteMediator mediator = new ConcreteMediator();
-        mediator.notify(mainInstance, Main.ROUTE);
+        mediator.goToOnboardingView();
     }
 }
